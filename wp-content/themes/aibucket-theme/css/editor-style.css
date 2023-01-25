@@ -146,6 +146,11 @@
   margin-bottom: 2rem
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem
+}
+
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem
@@ -154,16 +159,6 @@
 .-mx-4 {
   margin-left: -1rem;
   margin-right: -1rem
-}
-
-.my-20 {
-  margin-top: 5rem;
-  margin-bottom: 5rem
-}
-
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem
 }
 
 .mb-4 {
@@ -394,11 +389,6 @@
   max-width: 64rem
 }
 
-.max-w-max {
-  max-width: -moz-max-content;
-  max-width: max-content
-}
-
 .flex-1 {
   flex: 1 1 0%
 }
@@ -512,6 +502,12 @@
   gap: 0px
 }
 
+.space-y-12 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(3rem * var(--tw-space-y-reverse))
+}
+
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
@@ -564,12 +560,6 @@
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
-}
-
-.space-y-12 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(3rem * var(--tw-space-y-reverse))
 }
 
 .divide-y > :not([hidden]) ~ :not([hidden]) {
@@ -844,6 +834,11 @@
   line-height: 1.5rem
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem
@@ -860,11 +855,6 @@
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem
 }
 
 .font-light {
@@ -963,11 +953,6 @@
 .text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(227 160 8 / var(--tw-text-opacity))
-}
-
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(63 131 248 / var(--tw-text-opacity))
 }
 
 .underline {
@@ -1259,14 +1244,14 @@ body {
     padding-bottom: 5rem
   }
 
-  .sm\:py-24 {
-    padding-top: 6rem;
-    padding-bottom: 6rem
-  }
-
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem
+  }
+
+  .sm\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem
   }
 
   .sm\:px-16 {
@@ -1288,6 +1273,11 @@ body {
     line-height: 1.75rem
   }
 
+  .sm\:text-5xl {
+    font-size: 3rem;
+    line-height: 1
+  }
+
   .sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem
@@ -1296,11 +1286,6 @@ body {
   .sm\:text-base {
     font-size: 1rem;
     line-height: 1.5rem
-  }
-
-  .sm\:text-5xl {
-    font-size: 3rem;
-    line-height: 1
   }
 }
 

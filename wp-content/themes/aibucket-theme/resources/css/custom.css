@@ -44,6 +44,26 @@ article > *:not(.entry-content),
             @apply list-decimal list-inside;
         }
     }
+    /* Some buttons for gutenberg */
+    .wp-block-button .wp-element-button, 
+    .wp-block-button .wp-block-button__link {
+        @apply bg-indigo-600;
+        @apply text-white;
+        @apply rounded-md;
+    }
+
+    .gform_button.button,
+    input[type="submit"] {
+        @apply bg-indigo-600;
+        @apply text-white;
+        @apply rounded-md;
+    }
+
+    .wp-block-button.is-style-outline .wp-element-button, 
+    .wp-block-button.is-style-outline .wp-block-button__link {
+
+    }
+
 }
 
 
