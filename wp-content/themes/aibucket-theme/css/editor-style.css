@@ -156,14 +156,14 @@
   margin-right: -1rem
 }
 
-.-mx-5 {
-  margin-left: -1.25rem;
-  margin-right: -1.25rem
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem
 }
 
-.-my-2 {
-  margin-top: -0.5rem;
-  margin-bottom: -0.5rem
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem
 }
 
 .mb-4 {
@@ -330,6 +330,10 @@
   width: 4rem
 }
 
+.w-56 {
+  width: 14rem
+}
+
 .w-6 {
   width: 1.5rem
 }
@@ -356,14 +360,6 @@
 
 .w-44 {
   width: 11rem
-}
-
-.w-80 {
-  width: 20rem
-}
-
-.w-56 {
-  width: 14rem
 }
 
 .max-w-sm {
@@ -398,8 +394,9 @@
   max-width: 64rem
 }
 
-.max-w-xs {
-  max-width: 20rem
+.max-w-max {
+  max-width: -moz-max-content;
+  max-width: max-content
 }
 
 .flex-1 {
@@ -473,10 +470,6 @@
 
 .flex-col {
   flex-direction: column
-}
-
-.flex-wrap {
-  flex-wrap: wrap
 }
 
 .items-start {
@@ -573,6 +566,12 @@
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
 }
 
+.space-y-12 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(3rem * var(--tw-space-y-reverse))
+}
+
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -632,7 +631,7 @@
 
 .border-primary {
   --tw-border-opacity: 1;
-  border-color: rgb(233 58 14 / var(--tw-border-opacity))
+  border-color: rgb(81 74 224 / var(--tw-border-opacity))
 }
 
 .border-transparent {
@@ -651,7 +650,7 @@
 
 .bg-primary {
   --tw-bg-opacity: 1;
-  background-color: rgb(233 58 14 / var(--tw-bg-opacity))
+  background-color: rgb(81 74 224 / var(--tw-bg-opacity))
 }
 
 .bg-gray-200 {
@@ -863,6 +862,11 @@
   line-height: 1rem
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem
+}
+
 .font-light {
   font-weight: 300
 }
@@ -943,7 +947,7 @@
 
 .text-primary {
   --tw-text-opacity: 1;
-  color: rgb(233 58 14 / var(--tw-text-opacity))
+  color: rgb(81 74 224 / var(--tw-text-opacity))
 }
 
 .text-blue-400 {
@@ -1145,11 +1149,6 @@ body {
   color: rgb(75 85 99 / var(--tw-text-opacity))
 }
 
-.hover\:text-gray-900:hover {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity))
-}
-
 .focus\:border-gray-500:focus {
   --tw-border-opacity: 1;
   border-color: rgb(107 114 128 / var(--tw-border-opacity))
@@ -1157,7 +1156,7 @@ body {
 
 .focus\:border-primary:focus {
   --tw-border-opacity: 1;
-  border-color: rgb(233 58 14 / var(--tw-border-opacity))
+  border-color: rgb(81 74 224 / var(--tw-border-opacity))
 }
 
 .focus\:bg-white:focus {
@@ -1297,6 +1296,11 @@ body {
   .sm\:text-base {
     font-size: 1rem;
     line-height: 1.5rem
+  }
+
+  .sm\:text-5xl {
+    font-size: 3rem;
+    line-height: 1
   }
 }
 

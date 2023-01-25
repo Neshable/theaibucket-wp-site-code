@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * The template for displaying all pages
@@ -9,7 +9,7 @@
  * different template.
  *
  * Template Name: Default
- * 
+ *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package aibucket
@@ -17,12 +17,21 @@
 
 get_header(); ?>
 
+<div class="container mx-auto px-4 sm:px-6 space-y-12 my-10">
+
 	<?php if ( have_posts() ) : ?>
 		<?php
 		while ( have_posts() ) :
 			the_post();
-			the_content();
 			?>
+
+			<h1 class="text-center mt-2 text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
+				<?php the_title(); ?>
+			</h1>
+
+			<article class="entry-content prose prose-indigo lg:prose-xl">
+			<?php the_content(); ?>
+			</article>
 
 			<?php // get_template_part( 'template-parts/content', get_post_format() ); ?>
 
@@ -30,6 +39,7 @@ get_header(); ?>
 
 	<?php endif; ?>
 
+	</div>
 </div>
 
 <?php

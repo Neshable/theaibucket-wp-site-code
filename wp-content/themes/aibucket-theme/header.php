@@ -21,8 +21,8 @@
 
 		<div class="mx-auto container">
 			<div class="lg:flex lg:justify-between lg:items-center border-b py-6">
-				<div class="flex max-w-56 w-56 justify-between items-center">
-					<div>
+				<div class="flex justify-between items-center">
+					<div class="max-w-56 w-56">
 						<?php if ( has_custom_logo() ) { ?>
 							<?php the_custom_logo(); ?>
 						<?php } else { ?>
