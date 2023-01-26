@@ -2169,6 +2169,14 @@ footer p {
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
+footer h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
 footer img {
   margin-right: 1.25rem;
   width: 66.666667%;

@@ -82,6 +82,14 @@ footer .widget-title {
 footer p {
     @apply mt-4 mb-4 text-sm text-gray-600;
 }
+footer {
+    h2 {
+        @apply text-2xl;
+        @apply mb-4;
+        @apply mt-4;
+        @apply font-semibold;
+    }
+}
 footer img {
     @apply mr-5 w-2/3;
     max-width: 300px;
