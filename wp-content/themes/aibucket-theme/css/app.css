@@ -2068,8 +2068,10 @@ article > *:not(.entry-content),
 }
 
 .entry-content .gform_button.button,
+    .entry-content .gform_next_button.button,
     .entry-content input[type="submit"],
     .block-editor-block-list__layout .gform_button.button,
+    .block-editor-block-list__layout .gform_next_button.button,
     .block-editor-block-list__layout input[type="submit"] {
   cursor: pointer;
   margin-top: 1rem;
@@ -2090,8 +2092,10 @@ article > *:not(.entry-content),
 }
 
 .entry-content .gform_button.button:hover,
+    .entry-content .gform_next_button.button:hover,
     .entry-content input[type="submit"]:hover,
     .block-editor-block-list__layout .gform_button.button:hover,
+    .block-editor-block-list__layout .gform_next_button.button:hover,
     .block-editor-block-list__layout input[type="submit"]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(81 69 205 / var(--tw-bg-opacity));

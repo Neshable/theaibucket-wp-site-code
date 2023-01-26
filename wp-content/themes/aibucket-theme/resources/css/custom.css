@@ -53,6 +53,7 @@ article > *:not(.entry-content),
     }
 
     .gform_button.button,
+    .gform_next_button.button,
     input[type="submit"] {
         cursor: pointer;
         @apply mt-4 text-center block px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold rounded-md;
