@@ -48,16 +48,17 @@ article > *:not(.entry-content),
     /* Some buttons for gutenberg */
     .wp-block-button .wp-element-button, 
     .wp-block-button .wp-block-button__link {
-
         @apply mt-4 text-center block px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-md;
     }
 
     .gform_button.button,
+    .gform_button.button.gform-button--width-full,
     .gform_next_button.button,
     input[type="submit"] {
         cursor: pointer;
         @apply mt-4 text-center block px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold rounded-md;
     }
+
 
     .wp-block-button.is-style-outline .wp-element-button, 
     .wp-block-button.is-style-outline .wp-block-button__link {
