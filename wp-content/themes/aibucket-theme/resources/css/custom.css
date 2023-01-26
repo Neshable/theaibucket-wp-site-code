@@ -44,28 +44,48 @@ article > *:not(.entry-content),
             @apply list-decimal list-inside;
         }
     }
+
     /* Some buttons for gutenberg */
     .wp-block-button .wp-element-button, 
     .wp-block-button .wp-block-button__link {
-        @apply bg-indigo-600;
-        @apply text-white;
-        @apply rounded-md;
+
+        @apply mt-4 text-center block px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-md;
     }
 
     .gform_button.button,
     input[type="submit"] {
-        @apply bg-indigo-600;
-        @apply text-white;
-        @apply rounded-md;
+        cursor: pointer;
+        @apply mt-4 text-center block px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold rounded-md;
     }
 
     .wp-block-button.is-style-outline .wp-element-button, 
     .wp-block-button.is-style-outline .wp-block-button__link {
-
+        @apply mt-4 text-center block px-4 py-2 bg-white border-indigo-600 hover:bg-indigo-600 hover:text-white text-indigo-600 text-sm font-bold rounded-md;
     }
 
 }
 
+/* General form inputs */
+input:not([type="radio"]):not([type="checkbox"]),
+textarea {
+    @apply rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0;
+}
+
+/* Footer */
+
+footer .widget-title {
+    @apply font-medium mb-4;
+}
+footer p {
+    @apply mt-4 text-sm text-gray-600;
+}
+footer img {
+    @apply mr-5 w-2/3;
+    max-width: 300px;
+}
+footer ul.menu {
+    @apply flex flex-col mt-4 space-y-2 text-sm text-gray-500;
+}
 
 .bg-surface-1 {
     background: white;

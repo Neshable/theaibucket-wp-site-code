@@ -38,6 +38,8 @@ add_action( 'after_setup_theme', 'aibucket_theme_setup' );
 // Register some MU plugins.
 require_once get_template_directory() . '/inc/register-plugins.php';
 
+// Register some widgets
+require_once get_template_directory() . '/inc/register-widgets.php';
 // Register some MU plugins.
 require_once get_template_directory() . '/inc/post-types/tool-post-type.php';
 
