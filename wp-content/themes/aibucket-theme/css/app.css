@@ -2162,6 +2162,7 @@ footer .widget-title {
 
 footer p {
   margin-top: 1rem;
+  margin-bottom: 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   --tw-text-opacity: 1;
