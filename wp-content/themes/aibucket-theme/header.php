@@ -9,7 +9,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
+<body <?php body_class( 'bg-gray-50 text-gray-900 antialiased' ); ?>>
 
 <?php do_action( 'aibucket_theme_site_before' ); ?>
 
@@ -19,7 +19,7 @@
 
 	<header>
 
-		<div class="mx-auto container">
+		<div class="mx-auto bg-white container">
 			<div class="lg:flex lg:justify-between lg:items-center border-b py-6">
 				<div class="flex justify-between items-center">
 					<div class="max-w-56 w-56">

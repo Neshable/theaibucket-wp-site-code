@@ -7,7 +7,7 @@
 <?php do_action( 'aibucket_theme_content_after' ); ?>
 
 
-<footer class="bg-gray-50">
+<footer class="bg-white">
   <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
   <?php do_action( 'aibucket_theme_footer' ); ?>
 	
