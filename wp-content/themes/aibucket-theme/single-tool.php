@@ -32,7 +32,7 @@
 		$related_tools = new WP_Query(
 			array(
 				'post_type'      => 'tool',
-				'posts_per_page' => -1,
+				'posts_per_page' => 10,
 			)
 		);
 
@@ -47,16 +47,22 @@
 
 			<div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
 			<?php
-
-			while ( $related_tools->have_posts() ) :
+			$posts = 0; // count the posts displayed, up to 5
+			while ( $related_tools->have_posts() && $posts < 6 ) :
 				$related_tools->the_post();
-
-				get_template_part( 'template-parts/content', 'tool' );
+				$current = get_the_ID();
+				// Exclude the current post if it's in the query. Faster than using posts__not_in.
+				if ( $current != $current_post_id  ) {
+					$posts++;
+					get_template_part( 'template-parts/content', 'tool' );
+				}
+		
 			endwhile;
 			?>
 			</div>
 		</div>
 			<?php
+			wp_reset_postdata();
 		endif;
 	}
 

@@ -17,7 +17,7 @@
 
 	<?php do_action( 'aibucket_theme_header' ); ?>
 
-	<header>
+	<header class="bg-white">
 
 		<div class="mx-auto bg-white container">
 			<div class="lg:flex lg:justify-between lg:items-center border-b py-6">

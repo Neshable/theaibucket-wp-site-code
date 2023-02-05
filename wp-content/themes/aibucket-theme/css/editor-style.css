@@ -623,6 +623,10 @@
   border-bottom-width: 1px
 }
 
+.border-t {
+  border-top-width: 1px
+}
+
 .border-primary {
   --tw-border-opacity: 1;
   border-color: rgb(81 74 224 / var(--tw-border-opacity))

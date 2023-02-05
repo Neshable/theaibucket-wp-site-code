@@ -36,7 +36,7 @@ $button_class = array(
 $random_tools = new WP_Query(
 	array(
 		'post_type'     => 'tool',
-		'post_per_page' => 9,
+		'post_per_page' => 12,
 	)
 );
 
@@ -46,8 +46,8 @@ get_header(); ?>
 	<div class="text-center">
 	<h1 class="text-5xl tracking-tight font-extrabold text-gray-900 md:text-6xl">
 	<span class="block xl:inline">The </span>
-	<span class="block text-indigo-600 xl:inline">AI Bucket</span>
-	<span class="block xl:inline"> of Tools</span>
+	<span class="block text-indigo-600 xl:inline">Ultimate Bucket</span>
+	<span class="block xl:inline"> of AT Tools</span>
 	</h1>
 	<p class="
 				mt-3
@@ -57,7 +57,7 @@ get_header(); ?>
 				sm:text-lg
 				md:mt-5 md:text-xl md:max-w-3xl
 			">
-	Large AI Directory with the Latest Tools, Updated Weekly.
+	Stay Ahead of the Game with Our Up-to-date and Comprehensive AI Directory.
 	</p>
 
 
