@@ -47,7 +47,7 @@ get_header(); ?>
 	<h1 class="text-5xl tracking-tight font-extrabold text-gray-900 md:text-6xl">
 	<span class="block xl:inline">The </span>
 	<span class="block text-indigo-600 xl:inline">Ultimate Bucket</span>
-	<span class="block xl:inline"> of AT Tools</span>
+	<span class="block xl:inline"> of AI Tools</span>
 	</h1>
 	<p class="
 				mt-3
