@@ -23,7 +23,7 @@ get_header();
 $random_tool = new WP_Query(
 	array(
 		'orderby'        => 'rand',
-		'post_type'     => 'tool'
+		'post_type'     => 'tool',
 		'posts_per_page' => '1',
 	)
 );
