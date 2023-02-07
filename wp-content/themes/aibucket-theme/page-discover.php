@@ -23,6 +23,7 @@ get_header();
 $random_tool = new WP_Query(
 	array(
 		'orderby'        => 'rand',
+		'post_type'     => 'tool'
 		'posts_per_page' => '1',
 	)
 );
@@ -44,7 +45,7 @@ $random_tool = new WP_Query(
 			?>
 
 			<script>
-				window.history.pushState(null, <?php echo get_the_title(); ?>, <?php echo get_permalink(); ?> );
+				window.history.pushState(null, '<?php echo get_the_title(); ?>', '<?php echo get_permalink(); ?>' );
 			</script>
 
 			<?php get_template_part( 'template-parts/content', 'single-tool' ); ?>
