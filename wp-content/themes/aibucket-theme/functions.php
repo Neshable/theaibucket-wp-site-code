@@ -45,6 +45,9 @@ require_once get_template_directory() . '/inc/post-types/tool-post-type.php';
 
 require_once get_template_directory() . '/inc/taxonomies/taxonomy-tool-tags.php';
 
+// Custom classes 
+require_once get_template_directory() . '/inc/classes/class-alphabet-filter.php';
+
 /**
  * Enqueue theme assets.
  */
