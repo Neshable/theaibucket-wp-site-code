@@ -123,15 +123,7 @@ get_header(); ?>
 	</div>
   </div>
 <section class="container my-8 mx-auto sm:justify-center md:mt-8">
-	<p class="
-				mt-3
-				text-center
-				max-w-md
-				mx-auto
-				text-base text-gray-500
-				sm:text-lg
-				md:mt-5 md:text-xl md:max-w-3xl
-			">
+	<p class="text-3xl tracking-tight font-bold text-gray-900 md:text-4xl">
 	Latest AI Tools
 	</p>
   <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 lg:grid-cols-3">

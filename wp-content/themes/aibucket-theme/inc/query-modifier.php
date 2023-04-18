@@ -13,6 +13,7 @@ add_filter( 'pre_get_posts', function ( $query ) {
         return $query;
     }
 
+
     // /**
     //  * Bit of confusion
     //  * @see https://developer.wordpress.org/reference/functions/is_home/

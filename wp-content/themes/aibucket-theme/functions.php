@@ -47,6 +47,10 @@ require_once get_template_directory() . '/inc/taxonomies/taxonomy-tool-tags.php'
 
 // Custom classes 
 require_once get_template_directory() . '/inc/classes/class-alphabet-filter.php';
+require_once get_template_directory() . '/inc/classes/class-hmc-templates.php';
+
+
+require_once get_template_directory() . '/inc/query-modifier.php';
 
 /**
  * Enqueue theme assets.
