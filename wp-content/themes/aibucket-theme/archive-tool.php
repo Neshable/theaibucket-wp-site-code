@@ -4,7 +4,7 @@
 
 	<?php get_template_part( 'template-parts/elements/form', 'alphabet-general' ); ?>
 
-	<div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
+	<div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 lg:grid-cols-4">
 
 	<?php if ( have_posts() ) : ?>
 		<?php

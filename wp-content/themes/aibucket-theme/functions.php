@@ -60,6 +60,7 @@ function aibucket_theme_enqueue_scripts() {
 
 	wp_enqueue_style( 'tailpress', aibucket_theme_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
 	wp_enqueue_script( 'tailpress', aibucket_theme_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
+	wp_enqueue_script( 'flowbite', aibucket_theme_asset( 'js/flowbite.min.js' ), array(), $theme->get( 'Version' ) );
 }
 
 add_action( 'wp_enqueue_scripts', 'aibucket_theme_enqueue_scripts' );

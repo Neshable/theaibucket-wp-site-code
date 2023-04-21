@@ -42,6 +42,7 @@ $random_tools = new WP_Query(
 
 get_header(); ?>
 
+
 <main class="py-12 px-4 sm:py-20">
 	<div class="text-center">
 	<h1 class="text-5xl tracking-tight font-extrabold text-gray-900 md:text-6xl">
@@ -78,14 +79,15 @@ get_header(); ?>
 	</div>
 
 		<div class="flex items-center justify-between mt-4">
-		<button type="submit" class="px-4 py-2 w-full bg-gray-100 bg-indigo-600 hover:bg-indigo-700 font-medium rounded-md text-white text-sm font-medium rounded-md">
+		<button type="submit" class="px-4 py-2 w-full bg-indigo-600 hover:bg-indigo-700 font-medium rounded-md text-white text-sm font-medium rounded-md">
 			Search
 		</button>
 		</div>
 
 
 		<div>
-		<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
+		
+		<!-- <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
 			<select class="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">
 			<option value="">All Type</option>
 			<option value="for-rent">New</option>
@@ -94,25 +96,26 @@ get_header(); ?>
 
 			<?php
 
-			$taxonomies = get_terms(
-				array(
-					'taxonomy'   => 'tool_category',
-					'hide_empty' => false,
-				)
-			);
+			// $taxonomies = get_terms(
+			// 	array(
+			// 		'taxonomy'   => 'tool_category',
+			// 		'hide_empty' => false,
+			// 	)
+			// );
 
-			if ( ! empty( $taxonomies ) ) :
-				$output  = '<select class="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">';
-				$output .= '<option value="" selected="selected">Tools Categories</option>';
-				foreach ( $taxonomies as $category ) {
-					$output .= '<option value="' . esc_attr( $category->term_id ) . '">' . esc_html( $category->name ) . '</option>';
-				}
-				$output .= '</select>';
+			// if ( ! empty( $taxonomies ) ) :
+			// 	$output  = '<select class="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">';
+			// 	$output .= '<option value="" selected="selected">Tools Categories</option>';
+			// 	foreach ( $taxonomies as $category ) {
+			// 		$output .= '<option value="' . esc_attr( $category->term_id ) . '">' . esc_html( $category->name ) . '</option>';
+			// 	}
+			// 	$output .= '</select>';
 
-				echo $output;
-			endif;
+			// 	echo $output;
+			// endif;
 			?>
-		</div>
+		</div> -->
+
 		</div>
 		
 
@@ -126,7 +129,7 @@ get_header(); ?>
 	<p class="text-3xl tracking-tight font-bold text-gray-900 md:text-4xl">
 	Latest AI Tools
 	</p>
-  <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
+  <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 lg:grid-cols-4">
 
 	<?php if ( $random_tools->have_posts() ) : ?>
 		<?php
@@ -142,7 +145,21 @@ get_header(); ?>
 	<?php endif; ?>
 	
 	</div>
-	</section>
+</section>
+
+<section class="container my-8 mx-auto sm:justify-center md:mt-8">
+<div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+	<div class="flex items-center justify-between">
+    <div>
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Explore all tools</h5>
+    	<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Browse our complete library of AI tools. We add new tools almost daily.</p>
+	</div>
+	<a href="/tools" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        Browse all
+        <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+    </a>
+</div>
+</section>
 </main>
 
 

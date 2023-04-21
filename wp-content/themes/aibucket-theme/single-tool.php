@@ -22,8 +22,13 @@
 		<?php endwhile; ?>
 
 	<?php endif; ?>
-	</div>
 
+	
+	<?php 
+	
+	// get_template_part( 'template-parts/elements/form', 'subscribe' ); ?>
+
+	</div>
 
 	<?php
 	// If we have the ID then display all related posts.
