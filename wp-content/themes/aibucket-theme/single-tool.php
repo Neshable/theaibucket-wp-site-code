@@ -14,6 +14,17 @@
 
 			// Cache post ID for later use.
 			$current_post_id = get_the_ID();
+			$term_ids = array();
+
+			$terms = get_the_terms( get_the_ID(), 'tool_category' );
+
+			if ( $terms && ! is_wp_error( $terms ) ) : 
+			
+				foreach ( $terms as $term ) {
+					$term_links[] = $term->term_id;
+				}
+	
+			endif;
 
 			?>
 
@@ -38,6 +49,7 @@
 			array(
 				'post_type'      => 'tool',
 				'posts_per_page' => 10,
+				'category__in' 	=>   $term_ids
 			)
 		);
 
@@ -50,10 +62,10 @@
 				</h3>
 			</header>
 
-			<div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
+			<div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 lg:grid-cols-4">
 			<?php
 			$posts = 0; // count the posts displayed, up to 5
-			while ( $related_tools->have_posts() && $posts < 6 ) :
+			while ( $related_tools->have_posts() && $posts < 8 ) :
 				$related_tools->the_post();
 				$current = get_the_ID();
 				// Exclude the current post if it's in the query. Faster than using posts__not_in.
