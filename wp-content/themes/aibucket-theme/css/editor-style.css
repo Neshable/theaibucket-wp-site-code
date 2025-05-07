@@ -548,16 +548,16 @@
   grid-template-columns: repeat(2, minmax(0, 1fr))
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr))
+}
+
 .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr))
 }
 
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr))
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr))
 }
 
 .flex-row {
@@ -1724,16 +1724,12 @@ body {
     max-width: 48rem
   }
 
-  .sm\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr))
+  .sm\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr))
   }
 
   .sm\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr))
-  }
-
-  .sm\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr))
   }
 
   .sm\:flex-row {

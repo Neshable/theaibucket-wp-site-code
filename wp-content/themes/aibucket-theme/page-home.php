@@ -58,7 +58,7 @@ get_header(); ?>
 				sm:text-lg
 				md:mt-5 md:text-xl md:max-w-3xl
 			">
-	Stay Ahead of the Game with Our Up-to-date and Comprehensive AI Directory.
+    Find the best and newest AI tools in our always-growing list.
 	</p>
 
 

@@ -12,17 +12,18 @@ get_header();
 
 ?>
 
-    <div class="container my-8 mx-auto">
+	<div class="container my-8 mx-auto">
 
         <div class="py-4 px-4 sm:py-8">
             <div class="text-center">
                 <h1 class="text-2xl tracking-tight font-bold text-gray-900 md:text-4xl">
-                    <span class="block xl:inline">🎖️ Latest</span>
-                    <span class="block text-indigo-600 xl:inline">News</span>
+                    <span class="block xl:inline">💡 Trending</span>
+                    <span class="block text-indigo-600 xl:inline">Repos</span>
 
                 </h1>	
             </div>
         </div>
+
 
 		<?php if ( have_posts() ) : ?>
 				<div class="max-w-3xl mx-auto mt-8" style="">
@@ -32,12 +33,7 @@ get_header();
 
 						the_post();
 
-						/*
-						 * Include the Post-Type-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-						 */
-						get_template_part( 'template-parts/content', 'news' );
+						get_template_part( 'template-parts/content', 'repo' );
 
 					endwhile;
 					?>

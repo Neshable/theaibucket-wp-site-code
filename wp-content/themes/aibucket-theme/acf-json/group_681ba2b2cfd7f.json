@@ -1,0 +1,42 @@
+{
+    "key": "group_681ba2b2cfd7f",
+    "title": "Repo Meta",
+    "fields": [
+        {
+            "key": "field_681ba2b72a5ff",
+            "label": "URL",
+            "name": "url",
+            "type": "url",
+            "instructions": "The URL of the repository",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "repo"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1746641664
+}

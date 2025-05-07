@@ -42,6 +42,7 @@ require_once get_template_directory() . '/inc/register-plugins.php';
 require_once get_template_directory() . '/inc/register-widgets.php';
 // Register some MU plugins.
 require_once get_template_directory() . '/inc/post-types/tool-post-type.php';
+require_once get_template_directory() . '/inc/post-types/repos-post-type.php';
 
 require_once get_template_directory() . '/inc/taxonomies/taxonomy-tool-tags.php';
 
