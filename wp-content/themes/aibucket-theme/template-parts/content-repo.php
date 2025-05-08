@@ -11,7 +11,7 @@ if( has_post_thumbnail() ) {
 	$post_featured_image_url = '';
 }
 
-$repo_url = get_field( 'repo_url' );
+$repo_url = get_field( 'url' );
 ?>
 
 <div class="py-4">
