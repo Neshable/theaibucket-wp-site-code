@@ -2,92 +2,122 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Color+Emoji&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-gray-50 text-gray-900 antialiased' ); ?>>
+<body <?php body_class( 'bg-gray-50 text-gray-900 font-sans antialiased' ); ?>>
 
 <?php do_action( 'aibucket_theme_site_before' ); ?>
+
+<a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary focus:shadow-lg">
+	<?php esc_html_e( 'Skip to content', 'aibucket-theme' ); ?>
+</a>
 
 <div id="page" class="min-h-screen flex flex-col">
 
 	<?php do_action( 'aibucket_theme_header' ); ?>
-	
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 
-  <?php
-	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-  ?>
-  <a href="/" class="flex items-center">
-      <img src="<?php echo $image[0]; ?>" class="h-8 mr-3" alt="The AI Bucket" />
-  </a>
-  
-  <div class="flex md:order-2">
-    <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1" >
-      <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-      <span class="sr-only">Search</span>
-    </button>
-    <div class="relative hidden md:block">
-      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-        <span class="sr-only">Search icon</span>
-      </div>
-	  <form role="search" action="/" method="GET">
+	<?php
+	$aibucket_site_name     = get_bloginfo( 'name' );
+	$aibucket_custom_logo   = (int) get_theme_mod( 'custom_logo' );
+	$aibucket_search_query  = get_search_query();
+	$aibucket_search_label  = __( 'Search AI tools', 'aibucket-theme' );
+	$aibucket_show_cta      = ! is_page_template( 'page-newsletter.php' );
+	$aibucket_search_icon   = '<svg class="w-4 h-4 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>';
+	?>
 
-		<input type="hidden" name="post_type" value="tool">
-		<input type="text" name="s" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
-	</form>
-      
-    </div>
-    <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
-      <span class="sr-only">Open menu</span>
-      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-    </button>
-  </div>
-    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
-      <div class="relative mt-3 md:hidden">
-        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-          <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-        </div>
-        <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
-      </div>
-	  <?php
-		wp_nav_menu(
-			array(
-				'container_id'    => '',
-				'container_class' => '',
-				'menu_class'      => 'flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700',
-				'theme_location'  => 'primary',
-				'li_class'        => '',
-				'fallback_cb'     => false,
-			)
-		);
-		?>
-      
-    </div>
-	<div class="flex md:order-2">
-      <a href="/open-random-tool/" class="text-white hidden md:block bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-		Shuffle AI Tools
-	  </a>
-  </div>
-  </div>
-</nav>
+	<header class="bg-white border-b border-gray-200">
+		<nav aria-label="<?php esc_attr_e( 'Primary', 'aibucket-theme' ); ?>">
+			<div class="mx-auto flex max-w-site flex-wrap items-center justify-between gap-y-3 px-4 py-3 sm:px-5">
 
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center rounded" rel="home">
+					<?php
+					$aibucket_logo_html = $aibucket_custom_logo ? wp_get_attachment_image(
+						$aibucket_custom_logo,
+						'full',
+						false,
+						array(
+							'class'   => 'h-8 w-auto',
+							'alt'     => $aibucket_site_name,
+							'loading' => false,
+						)
+					) : '';
 
-	<div id="content" class="site-content flex-grow">
+					if ( $aibucket_logo_html ) {
+						echo $aibucket_logo_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- core-generated, escaped markup.
+					} else {
+						echo '<span class="text-lg font-bold tracking-tight text-gray-900">' . esc_html( $aibucket_site_name ) . '</span>';
+					}
+					?>
+				</a>
 
+				<div class="flex items-center gap-3 lg:order-2">
+					<form role="search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="relative hidden lg:block">
+						<input type="hidden" name="post_type" value="tool">
+						<label for="search-navbar" class="sr-only"><?php echo esc_html( $aibucket_search_label ); ?></label>
+						<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+							<?php echo $aibucket_search_icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG. ?>
+						</div>
+						<input type="search" name="s" id="search-navbar" value="<?php echo esc_attr( $aibucket_search_query ); ?>" class="block w-56 rounded-lg border border-gray-300 bg-gray-50 p-2 pl-9 text-sm text-gray-900" placeholder="<?php esc_attr_e( 'Search tools…', 'aibucket-theme' ); ?>">
+					</form>
+
+					<?php if ( $aibucket_show_cta ) : ?>
+					<a href="<?php echo esc_url( home_url( '/newsletter/' ) ); ?>" class="hidden lg:inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
+						<?php esc_html_e( 'Get the free workflow kit', 'aibucket-theme' ); ?>
+					</a>
+					<?php endif; ?>
+
+					<button type="button" data-collapse-toggle="primary-navigation" aria-controls="primary-navigation" aria-expanded="false" class="inline-flex items-center rounded-lg p-2 text-gray-600 hover:bg-gray-100 lg:hidden">
+						<span class="sr-only"><?php esc_html_e( 'Open menu', 'aibucket-theme' ); ?></span>
+						<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+					</button>
+				</div>
+
+				<div id="primary-navigation" class="hidden w-full lg:order-1 lg:flex lg:w-auto lg:items-center">
+					<form role="search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="relative mb-3 lg:hidden">
+						<input type="hidden" name="post_type" value="tool">
+						<label for="search-navbar-mobile" class="sr-only"><?php echo esc_html( $aibucket_search_label ); ?></label>
+						<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+							<?php echo $aibucket_search_icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG. ?>
+						</div>
+						<input type="search" name="s" id="search-navbar-mobile" value="<?php echo esc_attr( $aibucket_search_query ); ?>" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 pl-9 text-sm text-gray-900" placeholder="<?php esc_attr_e( 'Search tools…', 'aibucket-theme' ); ?>">
+					</form>
+
+					<?php
+					wp_nav_menu(
+						array(
+							'container'      => false,
+							'menu_class'     => 'flex flex-col gap-1 rounded-lg border border-gray-100 bg-gray-50 p-2 font-medium lg:flex-row lg:gap-6 lg:border-0 lg:bg-white lg:p-0',
+							'theme_location' => 'primary',
+							'li_class'       => '',
+							'fallback_cb'    => static function () {
+								get_template_part( 'template-parts/sections/nav-fallback' );
+							},
+						)
+					);
+					?>
+
+					<?php if ( $aibucket_show_cta ) : ?>
+					<a href="<?php echo esc_url( home_url( '/newsletter/' ) ); ?>" class="mt-3 flex items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 lg:hidden">
+						<?php esc_html_e( 'Get the free workflow kit', 'aibucket-theme' ); ?>
+					</a>
+					<?php endif; ?>
+				</div>
+
+			</div>
+		</nav>
+	</header>
+
+	<div id="content" class="site-content flex-grow focus:outline-none" tabindex="-1">
 
 		<?php do_action( 'aibucket_theme_content_start' ); ?>
 
 		<main>
-

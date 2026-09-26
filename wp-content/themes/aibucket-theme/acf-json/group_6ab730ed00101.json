@@ -1,0 +1,280 @@
+{
+    "key": "group_6ab730ed00101",
+    "title": "Tool editorial review",
+    "fields": [
+        {
+            "key": "field_6ab730ed00001",
+            "label": "Verdict",
+            "name": "verdict",
+            "type": "textarea",
+            "instructions": "Give a concise recommendation grounded in the evidence below.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_6ab730ed00002",
+            "label": "Best for",
+            "name": "best_for",
+            "type": "textarea",
+            "instructions": "Describe the audience and task this tool fits.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_6ab730ed00003",
+            "label": "Not for",
+            "name": "not_for",
+            "type": "textarea",
+            "instructions": "Describe situations where this tool is a poor fit.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_6ab730ed00004",
+            "label": "Limitations",
+            "name": "limitations",
+            "type": "textarea",
+            "instructions": "One limitation per line.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_6ab730ed00005",
+            "label": "Test method",
+            "name": "test_method",
+            "type": "wysiwyg",
+            "instructions": "Record input, task, settings, test date, outputs, correction work and failure cases.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_6ab730ed00006",
+            "label": "Evidence status",
+            "name": "evidence_status",
+            "type": "select",
+            "instructions": "Choose Tested hands-on only when the review is supported by an actual test.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "tested_hands_on": "Tested hands-on",
+                "desk_research": "Desk research",
+                "not_reviewed": "Not yet reviewed"
+            },
+            "default_value": "not_reviewed",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_6ab730ed00007",
+            "label": "Price from",
+            "name": "price_from",
+            "type": "text",
+            "instructions": "Include currency and starting amount; do not infer a current price from an old listing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_6ab730ed00008",
+            "label": "Billing basis",
+            "name": "billing_basis",
+            "type": "text",
+            "instructions": "For example: per user / month, billed annually; include relevant usage limits.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_6ab730ed00009",
+            "label": "Price source URL",
+            "name": "price_source_url",
+            "type": "url",
+            "instructions": "Link to the vendor page used to verify this price.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_6ab730ed0000a",
+            "label": "Price verified on",
+            "name": "price_verified_on",
+            "type": "date_picker",
+            "instructions": "The date the linked price was actually checked.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "Y-m-d",
+            "return_format": "Y-m-d",
+            "first_day": 1
+        },
+        {
+            "key": "field_6ab730ed0000b",
+            "label": "Last verified on",
+            "name": "last_verified_on",
+            "type": "date_picker",
+            "instructions": "The date the review facts were actually checked.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "Y-m-d",
+            "return_format": "Y-m-d",
+            "first_day": 1
+        },
+        {
+            "key": "field_6ab730ed0000c",
+            "label": "Reviewed by",
+            "name": "reviewed_by",
+            "type": "user",
+            "instructions": "Select the person responsible for this review.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "id"
+        },
+        {
+            "key": "field_6ab730ed0000d",
+            "label": "Affiliate URL",
+            "name": "affiliate_url",
+            "type": "url",
+            "instructions": "Use an approved referral link. This replaces the existing website URL only when Has affiliate is enabled.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_6ab730ed0000e",
+            "label": "Has affiliate",
+            "name": "has_affiliate",
+            "type": "true_false",
+            "instructions": "Enable when the vendor link is an affiliate link, including a referral URL saved in the legacy website field.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This tool has an affiliate relationship",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "tool"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Editorial facts are optional; publish only evidence you can support.",
+    "show_in_rest": 0,
+    "modified": 1790418170
+}

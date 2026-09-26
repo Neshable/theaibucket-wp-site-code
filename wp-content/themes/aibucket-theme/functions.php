@@ -53,6 +53,9 @@ require_once get_template_directory() . '/inc/classes/class-hmc-templates.php';
 
 require_once get_template_directory() . '/inc/query-modifier.php';
 
+// Editorial review field helpers (verdict, pricing, evidence).
+require_once get_template_directory() . '/inc/editorial-fields.php';
+
 /**
  * Enqueue theme assets.
  */

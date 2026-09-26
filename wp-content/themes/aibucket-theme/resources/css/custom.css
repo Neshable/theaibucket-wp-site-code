@@ -71,33 +71,36 @@ input[type="submit"] {
 /* General form inputs */
 input:not([type="radio"]):not([type="checkbox"]),
 textarea {
-    @apply rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0;
+    @apply rounded-md bg-gray-100 border-transparent focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary;
 }
 
-/* Footer */
+/* Visible keyboard focus everywhere (WCAG 2.4.7). */
+:focus-visible {
+    outline: 2px solid #514ae0;
+    outline-offset: 2px;
+}
 
-footer .widget-title {
-    @apply font-medium mb-4;
-}
-footer p {
-    @apply mt-4 mb-4 text-sm text-gray-600;
-}
-footer {
-    h2 {
-        @apply text-2xl;
-        @apply mb-4;
-        @apply mt-4;
-        @apply font-semibold;
-    }
-}
-footer img {
-    @apply mr-5 w-2/3;
-    max-width: 300px;
-}
-footer ul.menu {
-    @apply flex flex-col mt-4 space-y-2 text-sm text-gray-500;
+.bg-primary :focus-visible,
+.bg-dark :focus-visible {
+    outline-color: #ffffff;
 }
 
 .bg-surface-1 {
     background: white;
+}
+
+/* Primary navigation (WP menu + template fallback share the markup) */
+#primary-navigation .menu-item > a {
+    @apply block rounded-md px-3 py-2 text-gray-900 hover:bg-gray-100;
+}
+
+#primary-navigation .current-menu-item > a,
+#primary-navigation .current-menu-ancestor > a {
+    @apply text-primary;
+}
+
+@screen lg {
+    #primary-navigation .menu-item > a {
+        @apply px-0 py-1 hover:bg-transparent hover:text-primary;
+    }
 }

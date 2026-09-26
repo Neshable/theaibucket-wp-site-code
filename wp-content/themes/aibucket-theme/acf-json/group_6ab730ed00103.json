@@ -1,0 +1,71 @@
+{
+    "key": "group_6ab730ed00103",
+    "title": "Workflow page",
+    "fields": [
+        {
+            "key": "field_6ab730ed00012",
+            "label": "Workflow outcome",
+            "name": "workflow_outcome",
+            "type": "textarea",
+            "instructions": "Describe the usable output readers can produce. Add the steps and real input/output examples in the page body.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_6ab730ed00013",
+            "label": "Workflow tools",
+            "name": "workflow_tools",
+            "type": "relationship",
+            "instructions": "Select the tools used, in workflow order.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "tool"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": 0,
+            "max": 0,
+            "return_format": "id"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-workflow.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Editorial facts are optional; publish only evidence you can support.",
+    "show_in_rest": 0,
+    "modified": 1790418174
+}

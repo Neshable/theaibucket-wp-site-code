@@ -3,7 +3,7 @@
   "settings": {
     "layout": {
       "contentSize": "960px",
-      "wideSize": "1280px"
+      "wideSize": "1200px"
     },
     "color": {
       "palette": [
@@ -39,7 +39,7 @@
         {
           "slug": "regular",
           "name": "Regular",
-          "size": "1.5rem"
+          "size": "1rem"
         },
         {
           "slug": "large",

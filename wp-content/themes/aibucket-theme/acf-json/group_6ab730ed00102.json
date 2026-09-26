@@ -1,0 +1,90 @@
+{
+    "key": "group_6ab730ed00102",
+    "title": "Comparison page",
+    "fields": [
+        {
+            "key": "field_6ab730ed0000f",
+            "label": "Compared tools",
+            "name": "compared_tools",
+            "type": "relationship",
+            "instructions": "Choose up to four tools in display order.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "tool"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": 0,
+            "max": 4,
+            "return_format": "id"
+        },
+        {
+            "key": "field_6ab730ed00010",
+            "label": "Quick winner by scenario",
+            "name": "quick_winner",
+            "type": "textarea",
+            "instructions": "Explain which tool suits each scenario; do not name a winner without supporting evidence.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_6ab730ed00011",
+            "label": "Criteria",
+            "name": "criteria",
+            "type": "textarea",
+            "instructions": "One criterion per line. Best for, Not for, Limitations, Price, Evidence, Verdict and Last verified select table rows. Other criteria appear as evaluation scope; put task-specific results in the page body.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-comparison.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Editorial facts are optional; publish only evidence you can support.",
+    "show_in_rest": 0,
+    "modified": 1790418172
+}
