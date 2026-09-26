@@ -71,7 +71,7 @@
 
 					<?php if ( $aibucket_show_cta ) : ?>
 					<a href="<?php echo esc_url( home_url( '/newsletter/' ) ); ?>" class="hidden lg:inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
-						<?php esc_html_e( 'Get the free workflow kit', 'aibucket-theme' ); ?>
+						<?php esc_html_e( 'Get the newsletter', 'aibucket-theme' ); ?>
 					</a>
 					<?php endif; ?>
 
@@ -107,7 +107,7 @@
 
 					<?php if ( $aibucket_show_cta ) : ?>
 					<a href="<?php echo esc_url( home_url( '/newsletter/' ) ); ?>" class="mt-3 flex items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 lg:hidden">
-						<?php esc_html_e( 'Get the free workflow kit', 'aibucket-theme' ); ?>
+						<?php esc_html_e( 'Get the newsletter', 'aibucket-theme' ); ?>
 					</a>
 					<?php endif; ?>
 				</div>

@@ -20,7 +20,7 @@
 					<?php esc_html_e( 'See the step-by-step workflow', 'aibucket-theme' ); ?>
 				</a>
 				<a href="<?php echo esc_url( home_url( '/newsletter/' ) ); ?>" class="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 text-base font-semibold text-gray-900 hover:border-primary hover:text-primary">
-					<?php esc_html_e( 'Get the free workflow kit', 'aibucket-theme' ); ?>
+					<?php esc_html_e( 'Get the newsletter', 'aibucket-theme' ); ?>
 				</a>
 			</div>
 		</div>

@@ -13,7 +13,7 @@
 			'template-parts/elements/form',
 			'subscribe',
 			array(
-				'heading' => __( 'Get the free workflow kit', 'aibucket-theme' ),
+				'heading' => __( 'Get one tested workflow every other week', 'aibucket-theme' ),
 				'text'    => __( 'One tested workflow every other week: the input, the tools, the output and the fixes it needed. No spam, unsubscribe anytime.', 'aibucket-theme' ),
 				'variant' => 'card',
 			)

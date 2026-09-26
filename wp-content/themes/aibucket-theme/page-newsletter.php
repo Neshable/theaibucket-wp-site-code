@@ -10,7 +10,6 @@
  */
 
 $aibucket_benefits = array(
-	__( 'The free workflow kit for turning a client recording into approved clips and posts.', 'aibucket-theme' ),
 	__( 'One complete workflow per issue: the input, the tools and settings, the output and the manual fixes it needed.', 'aibucket-theme' ),
 	__( 'What each tool costs and where it fell short, so you can decide before you pay.', 'aibucket-theme' ),
 );
