@@ -9,9 +9,14 @@
 !README.md
 !wp-content/
 
-# 2. Inside wp-content/: ignore all, keep only themes/ scaffolding.
+# 2. Inside wp-content/: ignore all, keep only themes/ and mu-plugins/ scaffolding.
 wp-content/*
 !wp-content/themes/
+!wp-content/mu-plugins/
+
+# 2b. Only the site's own must-use plugin.
+wp-content/mu-plugins/*
+!wp-content/mu-plugins/aibucket-hardening.php
 
 # 3. Only the aibucket theme.
 wp-content/themes/*
