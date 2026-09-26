@@ -1,50 +1,64 @@
-<div id="post-<?php the_ID(); ?>" class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <a href="<?php the_permalink(); ?>">
-        <img class="rounded-t-lg" src="<?php echo get_the_post_thumbnail_url($post, 'full'); ?>" alt="product image" />
-    </a>
-    <div class="px-5 pb-5">
+<?php
+// Generate a consistent gradient colour based on the post title.
+$title     = get_the_title();
+$hue       = abs( crc32( $title ) ) % 360;
+$gradient  = 'hsl(' . $hue . ',60%,50%)';
+$gradient2 = 'hsl(' . ( ( $hue + 40 ) % 360 ) . ',70%,40%)';
+$initial   = strtoupper( mb_substr( $title, 0, 1 ) );
+?>
+<div id="post-<?php the_ID(); ?>" class="w-full bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 dark:bg-gray-800 dark:border-gray-700 flex flex-col overflow-hidden">
+
+	<?php if ( has_post_thumbnail() ) : ?>
+	<a href="<?php the_permalink(); ?>" class="block overflow-hidden" tabindex="-1">
+		<img
+			class="w-full h-44 object-cover hover:scale-105 transition-transform duration-300"
+			src="<?php echo esc_url( get_the_post_thumbnail_url( $post, 'medium' ) ); ?>"
+			alt="<?php echo esc_attr( $title ); ?>"
+			loading="lazy"
+		/>
+	</a>
+	<?php else : ?>
+	<a href="<?php the_permalink(); ?>" class="block" tabindex="-1">
+		<div class="w-full h-44 flex items-center justify-center" style="background: linear-gradient(135deg, <?php echo esc_attr( $gradient ); ?>, <?php echo esc_attr( $gradient2 ); ?>);">
+			<span class="text-white font-extrabold" style="font-size:4rem;line-height:1;opacity:.85;"><?php echo esc_html( $initial ); ?></span>
+		</div>
+	</a>
+	<?php endif; ?>
+
+	<div class="px-5 pt-4 pb-5 flex flex-col flex-1">
 		<div class="flex-1">
-        <a href="<?php the_permalink(); ?>">
-            <h5 class="text-xl mt-6 font-semibold tracking-tight text-gray-900 dark:text-white"><?php the_title(); ?></h5>
-        </a>
-        <div class="flex items-center mt-2.5 mb-5">
-            <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>First star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-            <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Second star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-            <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Third star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-            <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fourth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-            <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fifth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>
-        </div>
-		<p class="text-medium mb-3 text-gray-700">
-			<?php echo get_the_excerpt(); ?>
-		</p>
-		<?php
+			<a href="<?php the_permalink(); ?>">
+				<h5 class="text-base font-semibold tracking-tight text-gray-900 dark:text-white hover:text-indigo-600 transition-colors line-clamp-1"><?php the_title(); ?></h5>
+			</a>
+			<p class="text-sm mt-2 text-gray-500 dark:text-gray-400 line-clamp-3 leading-relaxed">
+				<?php echo wp_strip_all_tags( get_the_excerpt() ); ?>
+			</p>
 
-	// Get categories and tags.
-	$get_categories = get_the_terms( get_the_ID(), 'tool_category');
-	$out = array();
+			<?php
+			$get_categories = get_the_terms( get_the_ID(), 'tool_category' );
+			if ( ! empty( $get_categories ) && ! is_wp_error( $get_categories ) ) :
+				$visible_terms = array_slice( $get_categories, 0, 2 );
+				?>
+			<div class="mt-3 flex flex-wrap gap-1.5">
+				<?php foreach ( $visible_terms as $term ) : ?>
+				<a
+					href="<?php echo esc_url( get_term_link( $term->slug, 'tool_category' ) ); ?>"
+					class="px-2 py-0.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-medium rounded-full transition-colors"
+				><?php echo esc_html( $term->name ); ?></a>
+				<?php endforeach; ?>
+			</div>
+			<?php endif; ?>
+		</div>
 
-	// Check if we have them and fill the array.
-	if ( ! empty( $get_categories ) ) {
-		$out[] = '<div class="mt-6 mb-6">';
-		foreach ( $get_categories as $term ) {
-			$out[] = sprintf( '<a class="px-3 py-1 mr-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium rounded-full" href="%1$s">%2$s</a>',
-				esc_url( get_term_link( $term->slug, 'tool_category' ) ),
-				esc_html( $term->name )
-			);
-		}
-		$out[] = "\n</div>\n";
-	}
-
-	echo implode( '', $out );
-	
-	
-	?>
+		<div class="flex items-center justify-between mt-4 pt-3 border-t border-gray-100 dark:border-gray-700">
+			<span class="flex items-center gap-1.5 text-xs text-gray-400">
+				<span class="w-2 h-2 bg-green-500 rounded-full inline-block"></span>
+				Active
+			</span>
+			<a
+				href="<?php the_permalink(); ?>"
+				class="text-white bg-indigo-500 hover:bg-indigo-600 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-xs px-4 py-2 transition-colors"
+			>View Details</a>
+		</div>
 	</div>
-        <div class="flex items-center justify-between">
-			<span class="flex w-3 h-3 bg-green-500 rounded-full"></span>
-            <a href="<?php the_permalink(); ?>" class="text-white bg-indigo-500 hover:bg-indigo-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-			View Details</a>
-        </div>
-    </div>
 </div>
