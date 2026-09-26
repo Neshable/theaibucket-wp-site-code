@@ -2,7 +2,7 @@
 /**
  * Plugin Name: AI Bucket hardening
  * Description: Site-wide hardening added after the 2026-09 compromise clean-up. Must-use, so it can't be deactivated from wp-admin.
- * Version:     1.0.0
+ * Version:     1.0.1
  *
  * @package aibucket
  */
@@ -13,6 +13,10 @@ defined( 'ABSPATH' ) || exit;
  * XML-RPC: nothing on this site uses it (no Jetpack, no mobile app), and it is
  * a brute-force and pingback-abuse endpoint.
  */
+if ( defined( 'XMLRPC_REQUEST' ) && XMLRPC_REQUEST ) {
+	status_header( 403 );
+	exit( 'XML-RPC is disabled on this site.' );
+}
 add_filter( 'xmlrpc_enabled', '__return_false' );
 add_filter( 'xmlrpc_methods', '__return_empty_array' );
 add_filter(
@@ -70,9 +74,10 @@ remove_action( 'wp_head', 'wp_generator' );
 add_filter( 'the_generator', '__return_empty_string' );
 
 /*
- * Baseline security headers. These apply to responses PHP renders; pages served
- * straight from the WP Rocket cache skip PHP, so set the same headers at
- * Cloudflare / nginx for full coverage.
+ * Security headers nginx (RunCloud) doesn't already send — it sets
+ * X-Content-Type-Options and X-Frame-Options itself, so those aren't repeated
+ * here. These apply to responses PHP renders; pages served straight from the
+ * WP Rocket cache skip PHP, so set them at Cloudflare too for full coverage.
  */
 add_action(
 	'send_headers',
@@ -80,8 +85,6 @@ add_action(
 		if ( headers_sent() ) {
 			return;
 		}
-		header( 'X-Content-Type-Options: nosniff' );
-		header( 'X-Frame-Options: SAMEORIGIN' );
 		header( 'Referrer-Policy: strict-origin-when-cross-origin' );
 		header( 'Permissions-Policy: camera=(), microphone=(), geolocation=()' );
 	}
