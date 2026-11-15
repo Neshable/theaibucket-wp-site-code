@@ -14,6 +14,14 @@ $aibucket_benefits = array(
 	__( 'What each tool costs and where it fell short, so you can decide before you pay.', 'aibucket-theme' ),
 );
 
+/*
+ * Confirmation landing state: ConvertKit's "redirect after confirmation"
+ * points at /newsletter/?subscribed=1. Display-only flag, no state change,
+ * so no nonce applies.
+ */
+// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+$aibucket_confirmed = isset( $_GET['subscribed'] ) && '1' === sanitize_text_field( wp_unslash( $_GET['subscribed'] ) );
+
 get_header();
 
 while ( have_posts() ) :
@@ -29,19 +37,27 @@ while ( have_posts() ) :
 			</p>
 		</header>
 
-		<div class="mt-8 rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
-			<?php
-			get_template_part(
-				'template-parts/elements/form',
-				'subscribe',
-				array(
-					'heading' => '',
-					'text'    => '',
-					'variant' => 'compact',
-				)
-			);
-			?>
-		</div>
+		<?php if ( $aibucket_confirmed ) : ?>
+			<div class="mt-8 rounded-xl border border-green-200 bg-green-50 p-6 sm:p-8" role="status" data-aibucket-event="newsletter_confirmed" data-content-id="<?php echo esc_attr( get_the_ID() ); ?>">
+				<h2 class="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl"><?php esc_html_e( 'You are subscribed', 'aibucket-theme' ); ?></h2>
+				<p class="mt-2 text-base text-gray-700"><?php esc_html_e( 'Thanks for confirming your email. The next issue will arrive in your inbox.', 'aibucket-theme' ); ?></p>
+			</div>
+		<?php else : ?>
+			<div class="mt-8 rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+				<?php
+				get_template_part(
+					'template-parts/elements/form',
+					'subscribe',
+					array(
+						'heading' => '',
+						'text'    => '',
+						'variant' => 'compact',
+						'source'  => 'newsletter-page',
+					)
+				);
+				?>
+			</div>
+		<?php endif; ?>
 
 		<section class="mt-12" aria-labelledby="newsletter-benefits-heading">
 			<h2 id="newsletter-benefits-heading" class="text-2xl font-bold tracking-tight text-gray-900"><?php esc_html_e( 'What you get', 'aibucket-theme' ); ?></h2>

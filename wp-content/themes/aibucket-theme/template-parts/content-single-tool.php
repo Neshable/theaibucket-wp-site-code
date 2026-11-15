@@ -14,6 +14,7 @@ $reviewer       = aibucket_reviewer_name( $tool_id );
 $method         = aibucket_tool_field( 'test_method', $tool_id );
 $vendor_url     = aibucket_vendor_url( $tool_id );
 $vendor_rel     = aibucket_tool_field( 'has_affiliate', $tool_id ) ? 'sponsored nofollow noopener' : 'nofollow noopener';
+$vendor_link    = aibucket_tool_field( 'has_affiliate', $tool_id ) ? 'affiliate' : 'direct';
 ?>
 <article class="space-y-10 py-10 md:py-14">
 	<header class="grid w-full !max-w-none items-center gap-8 md:grid-cols-2">
@@ -58,7 +59,7 @@ $vendor_rel     = aibucket_tool_field( 'has_affiliate', $tool_id ) ? 'sponsored 
 						</div>
 					<?php endif; ?>
 					<?php if ( $vendor_url ) : ?>
-						<a class="mt-3 inline-flex min-h-[44px] w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-base font-semibold text-white hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4" href="<?php echo esc_url( $vendor_url ); ?>" target="_blank" rel="<?php echo esc_attr( $vendor_rel ); ?>"><?php /* translators: %s: tool name. */ echo esc_html( sprintf( __( 'Visit %s', 'aibucket-theme' ), get_the_title() ) ); ?><span class="ml-2" aria-hidden="true">&nearr;</span><span class="sr-only"><?php esc_html_e( ' (opens in a new tab)', 'aibucket-theme' ); ?></span></a>
+						<a class="mt-3 inline-flex min-h-[44px] w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-base font-semibold text-white hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4" href="<?php echo esc_url( $vendor_url ); ?>" target="_blank" rel="<?php echo esc_attr( $vendor_rel ); ?>" data-aibucket-cta="outbound" data-tool-id="<?php echo esc_attr( $tool_id ); ?>" data-tool-name="<?php echo esc_attr( wp_strip_all_tags( get_the_title( $tool_id ) ) ); ?>" data-content-id="<?php echo esc_attr( $tool_id ); ?>" data-content-type="tool" data-cta-position="tool-price-box" data-link-type="<?php echo esc_attr( $vendor_link ); ?>"><?php /* translators: %s: tool name. */ echo esc_html( sprintf( __( 'Visit %s', 'aibucket-theme' ), get_the_title() ) ); ?><span class="ml-2" aria-hidden="true">&nearr;</span><span class="sr-only"><?php esc_html_e( ' (opens in a new tab)', 'aibucket-theme' ); ?></span></a>
 						<?php get_template_part( 'template-parts/components/disclosure-note', null, array( 'post_id' => $tool_id ) ); ?>
 					<?php endif; ?>
 				</div>

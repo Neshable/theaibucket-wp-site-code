@@ -1,3 +1,5 @@
+import { initMeasurement } from './measurement';
+
 // Navigation toggle (legacy; Flowbite drives the current header nav).
 window.addEventListener('load', function () {
       const main_navigation = document.querySelector('#primary-menu');
@@ -10,3 +12,6 @@ window.addEventListener('load', function () {
             main_navigation.classList.toggle('hidden');
       });
 });
+
+// GA4 measurement events (no-op without gtag/dataLayer).
+initMeasurement();
