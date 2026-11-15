@@ -1,62 +1,44 @@
 <?php
 /**
- * The template for displaying search results pages
+ * Search results. The search forms send post_type=tool, so results are tool cards
+ * rendered with the same component and grid as the /tools/ archive.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package webiz_starter
+ * @package aibucket-theme
  */
 
 get_header();
 ?>
 
-<div id="primary" class="relative py-16 sm:py-24 lg:py-32">
-   <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-	  <h2 class="text-base font-semibold tracking-wider text-indigo-600">
-		<?php
-		/* translators: %s: search query. */
-		_e( 'Search Results for:', 'aibucket' );
-		?>
-	  </h2>
-	  <p class="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-		<?php echo get_search_query(); ?>
-	  </p>
-	  <p class="mt-5 max-w-prose mx-auto text-xl text-gray-500">
-		
-	  </p>
+<div id="primary" class="container mx-auto my-8">
 
-	  <?php
-		if ( have_posts() ) :
-			?>
-		<div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
+	<header class="py-6">
+		<h1 class="break-words text-3xl font-extrabold tracking-tight text-gray-900 md:text-5xl">
 			<?php
-					/* Start the Loop */
+			/* translators: %s: search query. */
+			printf( esc_html__( 'Search results for: %s', 'aibucket-theme' ), '<span class="text-primary">' . esc_html( get_search_query( false ) ) . '</span>' );
+			?>
+		</h1>
+	</header>
+
+	<?php if ( have_posts() ) : ?>
+		<div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+			<?php
 			while ( have_posts() ) :
 				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
 				get_template_part( 'template-parts/content', 'tool' );
+			endwhile;
+			?>
+		</div>
 
-					endwhile;
+		<?php Hmc_Templates::pagination(); ?>
 
-					the_posts_navigation();
+	<?php else : ?>
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
+	<?php endif; ?>
 
-				else :
-
-					get_template_part( 'template-parts/content', 'none' );
-					?>
-					</div>
-					<?php
-				endif;
-				?>
-   
-   </div>
 </div>
 
 <?php
-
 get_footer();
